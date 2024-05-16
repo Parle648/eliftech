@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { filter, throwError } from 'rxjs';
 import { DatabaseService } from 'src/database/database.service';
 
 interface IUser {

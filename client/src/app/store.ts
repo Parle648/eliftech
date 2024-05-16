@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import Tasks from '../shared/libs/slices/Tasks';
+import Events from '../shared/libs/slices/Events';
+import CurrentPage from '../shared/libs/slices/CurrentPage';
 
 export const store = configureStore({
   reducer: {
-    Tasks: Tasks
+    Events: Events,
+    CurrentPage: CurrentPage
   },
 });
 
