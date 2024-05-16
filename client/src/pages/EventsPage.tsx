@@ -1,9 +1,10 @@
 import EventCard from "../entities/EventCard/EventCard";
+import EventsList from "../widgets/EventsList/EventsList";
 
 const EventsPage = () => {
     return (
         <div>
-            <EventCard title="asdas" description="asdas" event_date="12.02.2034" organizer="asd" />
+            <EventsList />
         </div>
     );
 };
