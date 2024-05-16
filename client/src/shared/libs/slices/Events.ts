@@ -22,12 +22,12 @@ const Events = createSlice({
   name: 'Events',
   initialState,
   reducers: {
-    setTasks(state, action: PayloadAction<Event[]>) {
+    setEvents(state, action: PayloadAction<Event[]>) {
       state.value = action.payload;
     },
   }
 })
 
-export const { setTasks } = Events.actions;
+export const { setEvents } = Events.actions;
 
 export default Events.reducer;

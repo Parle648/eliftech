@@ -1,0 +1,22 @@
+.block {
+    max-width: 200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.pageBtn {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 3px;
+    border: 0;
+    
+    cursor: pointer;
+}
+
+.currentPageBtn {
+    background-color: orangered;
+    color: #fff;
+}

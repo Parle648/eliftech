@@ -5,19 +5,19 @@ interface EventState {
 }
 
 const initialState: EventState = {
-  value: 1,
+  value: 0,
 };
 
-const CurrentPage = createSlice({
-  name: 'CurrentPage',
+const Pages = createSlice({
+  name: 'Pages',
   initialState,
   reducers: {
-    setCurrentCount(state, action: PayloadAction<number>) {
+    setPages(state, action: PayloadAction<number>) {
       state.value = action.payload;
     },
   }
 })
 
-export const { setCurrentCount } = CurrentPage.actions;
+export const { setPages } = Pages.actions;
 
-export default CurrentPage.reducer;
+export default Pages.reducer;
