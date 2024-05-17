@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import Spinner from "../shared/UI/Spinner/Spinner";
 import { store } from "./store";
 import RegistrationPage from "../pages/RegistrationPage";
+import VisitPage from "../pages/VisitPage";
 
 function App() {
   const visible = useSelector((state: any) => state.SpinnerVisible.value)
@@ -21,6 +22,10 @@ function App() {
             <Route path='/registr/:id' element={
             <Suspense fallback={<Spinner disabled={true} />}>
               <RegistrationPage />
+            </Suspense>}></Route>
+            <Route path='/view/:id' element={
+            <Suspense fallback={<Spinner disabled={true} />}>
+              <VisitPage />
             </Suspense>}></Route>
           </Routes>
         </BrowserRouter>

@@ -1,6 +1,6 @@
 .block {
     width: 230px;
-    height: 220px;
+    height: 200px;
     margin-bottom: 10px;
 
     padding: 24px;
@@ -14,14 +14,4 @@
 
         cursor: pointer;
     }
-}
-
-.description {
-    margin-bottom: 40px;
-}
-
-.flexbox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }

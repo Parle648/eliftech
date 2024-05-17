@@ -13,7 +13,10 @@ const EventCard = ({id, title, description, event_date, organizer}: IEvent) => {
             <div className={styles.flexbox}>
                 <span>{event_date}</span> <span>{organizer}</span>
             </div>
-            <Link to={`registr/:${id}`}>registration</Link>
+            <div className={styles.flexbox}>
+                <Link to={`registr/:${id}`}>registration</Link>   
+                <Link to={`view/:${id}`}>view</Link>
+            </div>
         </div>
     );
 };
