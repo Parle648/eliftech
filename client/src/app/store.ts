@@ -1,4 +1,4 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import Events from '../shared/libs/slices/Events';
 import Pages from '../shared/libs/slices/Pages';
 import CurrentPage from '../shared/libs/slices/CurrentPage';
@@ -12,12 +12,3 @@ export const store = configureStore({
     SpinnerVisible: SpinnerVisible
   },
 });
-
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;

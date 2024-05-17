@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
 import Spinner from "../shared/UI/Spinner/Spinner";
 import { store } from "./store";
+import RegistrationPage from "../pages/RegistrationPage";
 
 function App() {
   const visible = useSelector((state: any) => state.SpinnerVisible.value)
@@ -16,6 +17,10 @@ function App() {
             <Route path='/' element={
             <Suspense fallback={<Spinner disabled={true} />}>
               <EventsPage />
+            </Suspense>}></Route>
+            <Route path='/registr/:id' element={
+            <Suspense fallback={<Spinner disabled={true} />}>
+              <RegistrationPage />
             </Suspense>}></Route>
           </Routes>
         </BrowserRouter>

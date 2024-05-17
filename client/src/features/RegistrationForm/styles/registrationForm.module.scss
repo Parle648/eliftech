@@ -1,0 +1,19 @@
+.form {
+    width: 400px;
+    margin: 250px auto;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 25px;
+}
+
+.invalidInput {
+    border: 1px solid red;
+}
+
+.errorMessage {
+    color: red;
+}

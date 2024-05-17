@@ -17,7 +17,7 @@ model users {
   id Int @id @default(autoincrement())
   event_id Int
   full_name String
-  email String @unique
+  email String
   date_of_birth DateTime
   where_hear String
 }
