@@ -4,6 +4,7 @@ import Pages from '../shared/libs/slices/Pages';
 import CurrentPage from '../shared/libs/slices/CurrentPage';
 import SpinnerVisible from '../shared/libs/slices/SpinnerVisible';
 import Users from '../shared/libs/slices/Users';
+import SortBy from '../shared/libs/slices/SortBy';
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     Pages: Pages,
     CurrentPage: CurrentPage,
     SpinnerVisible: SpinnerVisible,
-    Users: Users
+    Users: Users,
+    SortBy: SortBy,
   },
 });

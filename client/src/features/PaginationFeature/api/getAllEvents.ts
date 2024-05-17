@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export default async function getAllEvents(page: number) {
+export default async function getAllEvents(url: string) {
     try {
-        const events = await axios(`http://localhost:3001/event/pages/${page}`);
+        const events = await axios(url);
     
         return events;
     } catch (error) {

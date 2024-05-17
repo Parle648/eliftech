@@ -8,14 +8,20 @@ const PaginationFeature = () => {
     const eventsCount = useSelector((state: any) => state.Pages.value)
     const curretnPage = useSelector((state: any) => state.CurrentPage.value)
 
-    const pagesCount = Array.from({ length: eventsCount / 10}, (_, index) => index + 1)
+    const pagesCount = Array.from({ length: eventsCount / 10}, (_, index) => index + 1);
+
+    const sorts = useSelector((state: any) => state.SortBy.value)
     
     useEffect(() => {
-        updateEvents(0);
-    }, []);
+        if (sorts.name === '') {
+            updateEvents(0, sorts);
+        } else {
+            updateEvents(0, sorts);
+        }
+    }, [sorts]);
 
     function updatePage(event: React.MouseEvent<HTMLButtonElement>) {
-        updateEvents(+event.currentTarget.innerText - 1);
+        updateEvents(+event.currentTarget.innerText - 1, sorts);
         updateCurrentCount(+event.currentTarget.innerText);
     }
 
@@ -24,7 +30,7 @@ const PaginationFeature = () => {
             <button onClick={() => {
                 if(curretnPage > 1) {
                     updateCurrentCount(curretnPage - 1);
-                    updateEvents(curretnPage - 2);
+                    updateEvents(curretnPage - 2, sorts);
                 }
             }}>{'<'}</button>
             {pagesCount.map((number: number) => {
@@ -33,7 +39,7 @@ const PaginationFeature = () => {
             <button onClick={() => {
                 if (curretnPage < eventsCount / 10) {
                     updateCurrentCount(curretnPage + 1);
-                    updateEvents(curretnPage);
+                    updateEvents(curretnPage, sorts);
                 }
             }}>{'>'}</button>
         </div>
