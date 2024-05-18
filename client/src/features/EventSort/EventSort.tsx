@@ -15,12 +15,12 @@ const EventSort = () => {
         <form className={styles.block}>
             <select>
                 <option onClick={changeSorts} data-name="" value={-1}>sort by </option>
-                <option onClick={changeSorts} data-name="title" value={0}>title 0</option>
-                <option onClick={changeSorts} data-name="title" value={1}>title 1</option>
-                <option onClick={changeSorts} data-name="event_date" value={0}>date 0</option>
-                <option onClick={changeSorts} data-name="event_date" value={1}>date 1</option>
-                <option onClick={changeSorts} data-name="organizer" value={0}>organizer 0</option>
-                <option onClick={changeSorts} data-name="organizer" value={1}>organizer 1</option>
+                <option onClick={changeSorts} data-name="title" value={0}>title from z to a</option>
+                <option onClick={changeSorts} data-name="title" value={1}>title from a to z</option>
+                <option onClick={changeSorts} data-name="event_date" value={0}>date from new to old</option>
+                <option onClick={changeSorts} data-name="event_date" value={1}>date from old to new</option>
+                <option onClick={changeSorts} data-name="organizer" value={0}>organizer z to a</option>
+                <option onClick={changeSorts} data-name="organizer" value={1}>organizer a to z</option>
             </select>
         </form>
     );
