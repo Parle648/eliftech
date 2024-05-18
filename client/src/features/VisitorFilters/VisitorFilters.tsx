@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './styles/visitorsFilters.module.scss';
 import updateUsers from '../../widgets/UsersList/helpers/updateUsers';
@@ -12,8 +12,11 @@ const VisitorFilters = ({id}: {id: Number}) => {
         }
     } = useForm();
 
+    useEffect(() => {
+        updateUsers(`http://localhost:3001/user?event_id=${id}`)
+    }, [])
+
     function getByFilters(data: any) {
-        console.log(data);
         updateUsers(`http://localhost:3001/user?event_id=${id}${data.full_name && `&full_name=${data.full_name}`}${data.email && `&email=${data.email}`}`)
     }
 

@@ -8,7 +8,7 @@ const UsersList = ({id}: {id: Number}) => {
     const users = useSelector((state: any) => state.Users.value)
 
     useEffect(() => {
-        updateUsers(`http://localhost:3001/user?event_id=${id}&full_name=John Doe&email=asdsa@mail.com`)
+        updateUsers(`http://localhost:3001/user?event_id=${id}`)
     }, [])
     
     return (

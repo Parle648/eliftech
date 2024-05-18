@@ -25,9 +25,13 @@ const Events = createSlice({
     setEvents(state, action: PayloadAction<Event[]>) {
       state.value = action.payload;
     },
+    addEvents(state, action: PayloadAction<Event[]>) {
+      
+      state.value = state.value.concat(action.payload);
+    },
   }
 })
 
-export const { setEvents } = Events.actions;
+export const { setEvents, addEvents } = Events.actions;
 
 export default Events.reducer;

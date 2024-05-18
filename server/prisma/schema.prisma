@@ -20,6 +20,7 @@ model users {
   email String
   date_of_birth DateTime
   where_hear String
+  created_at DateTime @default(now())
 }
 
 model events {

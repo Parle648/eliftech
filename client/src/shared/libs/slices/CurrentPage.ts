@@ -15,9 +15,12 @@ const CurrentPage = createSlice({
     setCurrentCount(state, action: PayloadAction<number>) {
       state.value = action.payload;
     },
+    incrementCurrent(state) {
+      state.value = state.value + 1;
+    },
   }
 })
 
-export const { setCurrentCount } = CurrentPage.actions;
+export const { setCurrentCount, incrementCurrent } = CurrentPage.actions;
 
 export default CurrentPage.reducer;

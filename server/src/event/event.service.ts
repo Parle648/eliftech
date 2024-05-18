@@ -8,20 +8,10 @@ export class EventService {
   async findAll(param: number, sortBy?: {name: string, value: boolean}) {
     const ids = Array.from({ length: 10 }, (_, index) => +param * 10 + index + 1);
 
-    const events = await this.database.events.findMany({
-      where: {
-        id: {
-          in: ids
-        }
-      }
-    })
-
+    const events = await this.database.events.findMany()
     
-    const length = await this.database.events.count()
+    const length = await this.database.events.count() - 1
     
-    console.log(ids);
-    
-
     if (Object.keys(sortBy).length === 2) {
       const sortedEvents = await this.database.events.findMany({
         orderBy: {
@@ -40,7 +30,11 @@ export class EventService {
     }
 
     return {
-      events,
+      events: events.filter((elem, index) => {
+        if (index >= ids[0] && index <= ids.at(-1)) {
+          return elem
+        }
+      }),
       length
     }
   }
