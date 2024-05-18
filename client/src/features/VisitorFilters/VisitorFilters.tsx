@@ -13,11 +13,11 @@ const VisitorFilters = ({id}: {id: Number}) => {
     } = useForm();
 
     useEffect(() => {
-        updateUsers(`https://eliftech-ecpp.onrender.com/user?event_id=${id}`)
+        updateUsers(`http://localhost:3001/user?event_id=${id}`)
     }, [])
 
     function getByFilters(data: any) {
-        updateUsers(`https://eliftech-ecpp.onrender.com/user?event_id=${id}${data.full_name && `&full_name=${data.full_name}`}${data.email && `&email=${data.email}`}`)
+        updateUsers(`http://localhost:3001/user?event_id=${id}${data.full_name && `&full_name=${data.full_name}`}${data.email && `&email=${data.email}`}`)
     }
 
     return (

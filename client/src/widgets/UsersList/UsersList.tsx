@@ -8,7 +8,7 @@ const UsersList = ({id}: {id: Number}) => {
     const users = useSelector((state: any) => state.Users.value)
 
     useEffect(() => {
-        updateUsers(`https://eliftech-ecpp.onrender.com/user?event_id=${id}`)
+        updateUsers(`http://localhost:3001/user?event_id=${id}`)
     }, [])
     
     return (
